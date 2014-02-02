@@ -1,0 +1,17 @@
+
+http://username.github.io/about.html
+http://username.github.io/archive.html
+http://username.github.io/atom.xml
+http://username.github.io/categories.html
+http://username.github.io/index.html
+http://username.github.io/pages/about/index.html
+http://username.github.io/pages/about.html
+http://username.github.io/pages.html
+http://username.github.io/rss.xml
+http://username.github.io/sitemap.txt
+http://username.github.io/tags.html
+
+http://username.github.io/2014/02/03/raspisanie
+http://username.github.io/video/2014/02/02/test_imgs
+http://username.github.io/2014/02/02/test_audio
+http://username.github.io/2014/02/02/hello-world

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Hudoipudge</title>
+ <link href="http://username.github.io/" rel="self"/>
+ <link href="http://username.github.io"/>
+ <updated>2014-02-02T16:29:08+04:00</updated>
+ <id>http://username.github.io</id>
+ <author>
+   <name>hudoipudge</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>first_post_audio</title>
+   <link href="http://username.github.io/2014/02/03/raspisanie"/>
+   <updated>2014-02-03T00:00:00+04:00</updated>
+   <id>http://username.github.io/2014/02/03/raspisanie</id>
+   <content type="html">&lt;iframe frameborder='0' height='600' src='https://www.google.com/calendar/embed?mode=WEEK&amp;amp;height=600&amp;amp;wkst=2&amp;amp;hl=ru&amp;amp;bgcolor=%23FFFFFF&amp;amp;src=v29js6shvsdifr4tu2jklhgjk8%40group.calendar.google.com&amp;amp;color=%23182C57&amp;amp;ctz=Europe%2FMoscow' style=' border-width:0 ' width='800'&gt;        &lt;/iframe&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>first_post_img_video</title>
+   <link href="http://username.github.io/video/2014/02/02/test_imgs"/>
+   <updated>2014-02-02T00:00:00+04:00</updated>
+   <id>http://username.github.io/video/2014/02/02/test_imgs</id>
+   <content type="html">&lt;p&gt;first post on jekyll&lt;/p&gt;
+&lt;p&gt;&lt;img alt='test' height='150' src='https://pbs.twimg.com/media/BfcomIsIMAAuH6L.jpg:large' width='300' /&gt;&lt;/p&gt;
+&lt;p&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt;&lt;br /&gt;v&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;vv&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;v&lt;br /&gt; &lt;br /&gt; v dwsdws dsds ds ds ds ds d adsad a d&lt;/p&gt;
+&lt;iframe frameborder='0' height='315' src='http://www.youtube.com/embed/BexzQbBqak4' width='560'&gt;        &lt;/iframe&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>first_post_audio</title>
+   <link href="http://username.github.io/2014/02/02/test_audio"/>
+   <updated>2014-02-02T00:00:00+04:00</updated>
+   <id>http://username.github.io/2014/02/02/test_audio</id>
+   <content type="html">&lt;iframe frameborder='no' height='450' scrolling='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/127989630&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;visual=true' width='100%'&gt;        &lt;/iframe&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Hello World</title>
+   <link href="http://username.github.io/2014/02/02/hello-world"/>
+   <updated>2014-02-02T00:00:00+04:00</updated>
+   <id>http://username.github.io/2014/02/02/hello-world</id>
+   <content type="html">&lt;p&gt;first post on jekyll&lt;/p&gt;</content>
+ </entry>
+ 
+ 
+</feed>
