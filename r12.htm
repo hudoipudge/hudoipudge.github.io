@@ -1,0 +1,283 @@
+<html>
+<head>
+<title>Автоматизированная система измерений гидродинамических параметров Нижегородской ГЭС.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+
+<script language="JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<script language="JavaScript1.2">
+
+// Script Source: CodeLifter.com
+// Copyright 2003
+// Do not remove this header
+
+// =======================================
+// Place this script in the head of your
+// page and set the following variables.
+// =======================================
+
+// Set slideShowSpeed (milliseconds)
+var slideShowSpeed = 4000
+
+// Duration of crossfade (seconds)
+var crossFadeDuration = 3
+
+// Specify the image files
+var Pic = new Array() // don't touch this
+// to add more images, just continue
+// the pattern, adding to the array below
+
+Pic[0] = 'sss2.jpg'/*tpa=http://vgavt-radio.ru/sss2.jpg*/
+
+Pic[1] = 'sss3.jpg'/*tpa=http://vgavt-radio.ru/sss3.jpg*/
+
+Pic[2] = 'sss4.jpg'/*tpa=http://vgavt-radio.ru/sss4.jpg*/
+
+Pic[3] = 'sss6.jpg'/*tpa=http://vgavt-radio.ru/sss6.jpg*/
+
+Pic[4] = 'sss7.jpg'/*tpa=http://vgavt-radio.ru/sss7.jpg*/
+
+// =======================================
+// do not edit anything below this line
+// =======================================
+
+isIE=document.all;
+isNN=!document.all&&document.getElementById;
+isN4=document.layers;
+isHot=false;
+
+function ddInit(e){
+  topDog=isIE ? "BODY" : "HTML";
+  whichDog=isIE ? document.all.theLayer : document.getElementById("theLayer");  
+  hotDog=isIE ? event.srcElement : e.target;  
+  while (hotDog.id!="titleBar"&&hotDog.tagName!=topDog){
+    hotDog=isIE ? hotDog.parentElement : hotDog.parentNode;
+  }  
+  if (hotDog.id=="titleBar"){
+    offsetx=isIE ? event.clientX : e.clientX;
+    offsety=isIE ? event.clientY : e.clientY;
+    nowX=parseInt(whichDog.style.left);
+    nowY=parseInt(whichDog.style.top);
+    ddEnabled=true;
+    document.onmousemove=dd;
+  }
+}
+
+function dd(e){
+  if (!ddEnabled) return;
+  whichDog.style.left=isIE ? nowX+event.clientX-offsetx : nowX+e.clientX-offsetx; 
+  whichDog.style.top=isIE ? nowY+event.clientY-offsety : nowY+e.clientY-offsety;
+  return false;  
+}
+
+function ddN4(whatDog){
+  if (!isN4) return;
+  N4=eval(whatDog);
+  N4.captureEvents(Event.MOUSEDOWN|Event.MOUSEUP);
+  N4.onmousedown=function(e){
+    N4.captureEvents(Event.MOUSEMOVE);
+    N4x=e.x;
+    N4y=e.y;
+  }
+  N4.onmousemove=function(e){
+    if (isHot){
+      N4.moveBy(e.x-N4x,e.y-N4y);
+      return false;
+    }
+  }
+  N4.onmouseup=function(){
+    N4.releaseEvents(Event.MOUSEMOVE);
+  }
+}
+
+
+var t
+var j = 0
+var p = Pic.length
+
+var preLoad = new Array()
+for (i = 0; i < p; i++){
+   preLoad[i] = new Image()
+   preLoad[i].src = Pic[i]
+}
+
+function runSlideShow(){
+   if (document.all){
+      document.images.SlideShow.style.filter="blendTrans(duration=2)";
+      document.images.SlideShow.style.filter="blendTrans(duration=crossFadeDuration)";
+      document.images.SlideShow.filters.blendTrans.Apply();      
+   }
+   if (!isN4) document.images.SlideShow.src = preLoad[j].src;
+   if (isN4) document.layers['theLayer'].document.images['SlideShow'].src = preLoad[j].src;
+   if (document.all){
+      document.images.SlideShow.filters.blendTrans.Play();
+   }
+   j = j + 1;
+   if (j > (p-1)) j=0;
+   t = setTimeout('runSlideShow()', slideShowSpeed);
+}
+
+</script>
+
+<link rel="stylesheet" href="style.html" tppabs="http://vgavt-radio.ru/style.html" type="text/css">
+<body bgcolor="#FFFFFF" text="#666666" link="#000099" onLoad="MM_preloadImages('m1s.jpg'/*tpa=http://vgavt-radio.ru/m1s.jpg*/,'m2s.jpg'/*tpa=http://vgavt-radio.ru/m2s.jpg*/,'m3s.jpg'/*tpa=http://vgavt-radio.ru/m3s.jpg*/,'m4s.jpg'/*tpa=http://vgavt-radio.ru/m4s.jpg*/,'m5s.jpg'/*tpa=http://vgavt-radio.ru/m5s.jpg*/,'m6s.jpg'/*tpa=http://vgavt-radio.ru/m6s.jpg*/,'main2.jpg'/*tpa=http://vgavt-radio.ru/main2.jpg*/)" background="fonc.gif" tppabs="http://vgavt-radio.ru/fonc.gif" leftmargin="0" topmargin="0" vlink="#000099" alink="#CC3333">
+<table width="101%" border="0" cellspacing="0" cellpadding="0" height="914">
+  <tr> 
+    <td rowspan="3" width="198" valign="top" background="newfl.jpg" tppabs="http://vgavt-radio.ru/newfl.jpg" height="350" align="left"> 
+      <table width="185" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><a href="kadres.htm" tppabs="http://vgavt-radio.ru/kadres.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image4','','m1s.jpg'/*tpa=http://vgavt-radio.ru/m1s.jpg*/,1)"><img name="Image4" border="0" src="m1.jpg" tppabs="http://vgavt-radio.ru/m1.jpg" width="198" height="33"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="science.htm" tppabs="http://vgavt-radio.ru/science.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image5','','m2s.jpg'/*tpa=http://vgavt-radio.ru/m2s.jpg*/,1)"><img name="Image5" border="0" src="m2.jpg" tppabs="http://vgavt-radio.ru/m2.jpg" width="198" height="29"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="new.htm" tppabs="http://vgavt-radio.ru/new.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','m3s.jpg'/*tpa=http://vgavt-radio.ru/m3s.jpg*/,1)"><img name="Image6" border="0" src="m3.jpg" tppabs="http://vgavt-radio.ru/m3.jpg" width="198" height="28"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="metodic.htm" tppabs="http://vgavt-radio.ru/metodic.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','m4s.jpg'/*tpa=http://vgavt-radio.ru/m4s.jpg*/,1)"><img name="Image7" border="0" src="m4.jpg" tppabs="http://vgavt-radio.ru/m4.jpg" width="198" height="26"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="kources.htm" tppabs="http://vgavt-radio.ru/kources.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image8','','m5s.jpg'/*tpa=http://vgavt-radio.ru/m5s.jpg*/,1)"><img name="Image8" border="0" src="m5.jpg" tppabs="http://vgavt-radio.ru/m5.jpg" width="198" height="27"></a></td>
+        </tr>
+        <tr> 
+          <td><a href="labs.htm" tppabs="http://vgavt-radio.ru/labs.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','m6s.jpg'/*tpa=http://vgavt-radio.ru/m6s.jpg*/,1)"><img name="Image9" border="0" src="m6.jpg" tppabs="http://vgavt-radio.ru/m6.jpg" width="198" height="26"></a></td>
+        </tr>
+      </table>
+      <img src="theme.jpg" tppabs="http://vgavt-radio.ru/theme.jpg" width="198" height="175"></td>
+    <td width="196" height="85" align="right" valign="top" background="ff.jpg" tppabs="http://vgavt-radio.ru/ff.jpg"><img src="left_top.jpg" tppabs="http://vgavt-radio.ru/left_top.jpg" width="196" height="85"></td>
+    <td width="276" height="58" background="ff.jpg" tppabs="http://vgavt-radio.ru/ff.jpg">&nbsp;</td>
+    <td width="408" height="58" align="right" valign="top" background="ff.jpg" tppabs="http://vgavt-radio.ru/ff.jpg"><img src="right_top.jpg" tppabs="http://vgavt-radio.ru/right_top.jpg" width="408" height="85"></td>
+  </tr>
+  
+  <tr> 
+    <td colspan="3" height="656" valign="top"> <table width="773" border="0" cellspacing="0" cellpadding="10" height="622">
+        <tr> 
+          <td width="29" height="55" colspan="2" rowspan="2" valign="top"><img src="prr.jpg" tppabs="http://vgavt-radio.ru/prr.jpg" width="290" height="36"></td>
+          <td height="55" width="27%" align="right" valign="middle"> <table width="106" border="1" cellpadding="0" bordercolor="#9999CC" cellspacing="0">
+              <tr> 
+                <td valign="top" align="center" height="24" bgcolor="#eeeeee">&nbsp;<a class=topnav
+                  onMouseOver=fnChange(30) onMouseOut=fnRestore() 
+                  href="index.php.htm" tppabs="http://vgavt-radio.ru/index.php">на главную</a></td>
+              </tr>
+            </table></td>
+          <td width="21%" align="right" valign="middle"><table width="106" border="1" cellpadding="0" bordercolor="#9999CC" cellspacing="0">
+              <tr> 
+                <td valign="top" align="center" height="24" bgcolor="#eeeeee">&nbsp;<a class=topnav
+                  onMouseOver=fnChange(30) onMouseOut=fnRestore() 
+                  href="javascript:if(confirm(%27http://www.nic-vgavt.ru/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.nic-vgavt.ru/%27" tppabs="http://www.nic-vgavt.ru/">nic-vgavt</a></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="48" colspan="2" align="center">
+<h5><font face="Verdana, Arial, Helvetica, sans-serif"><br>
+              <font size="2">C</font></font><font size="2" face="Verdana, Arial, Helvetica, sans-serif">истема 
+              контроля и отображения параметров движительного комплекса (СКОДК) 
+              Для теплохода «Сура</font></h5></td>
+        </tr>
+        <tr align="center"> 
+          <td colspan="4" height="200"><p align="left"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">В 
+              настоящее время строится мелкосидящий пассажирский теплоход «Сура». 
+              Его отличительной особенностью является движительный комплекс – 
+              два гребных колеса, расположенных на корме судна и отсутствие традиционного 
+              руля. Управление судном осуществляется с помощью независимых электроприводов 
+              гребных колес. Меняя соотношение частот вращения гребных колес, 
+              судоводитель может осуществить различные маневры.<br>
+              Для эффективного управления судном судоводителю требуется прибор, 
+              показывающий направление и величину суммарного вектора тяги или 
+              упора гребных колес.<br>
+              Для теплохода «Сура была создана система контроля и отображения 
+              параметров движительного комплекса (СКО ДК), представляющая собой 
+              аппаратно-программный комплекс для контроля и отображения необходимых 
+              судоводителю параметров:<br>
+              -направления и величины вектора упора движительного комплекса; <br>
+              -частот вращения гребных колес;<br>
+              -токов, потребляемых электродвигателями гребных колес;<br>
+              -напряжений на электродвигателях гребных колес;<br>
+              -мощностей, потребляемых приводами гребных колес;<br>
+              -положения гребных колес.<br>
+              Перечисленные параметры движительного комплекса выводятся на монитор 
+              в виде мнемосхемы и числовых данных.</font><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><br>
+              </font></p></td>
+        </tr>
+        <tr align="right"> 
+          <td width="29%" align="center" valign="middle"> <p align="left"><img src="r12.jpg" tppabs="http://vgavt-radio.ru/r12.jpg" width="340" height="254"></p>
+            <p align="center"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Рис.1 
+              </font></p></td>
+          <td height="305" colspan="3" align="left" valign="top"> <p><font size="1" face="Verdana, Arial, Helvetica, sans-serif">. 
+              Система построена на базе панельного компьютера с сенсорным экраном 
+              фирмы Advantech TPC-870. Компьютер по полевой шине получает информацию 
+              с частотных приводов и датчика положения гребных колес и на ее основе 
+              высчитывает величину и направление вектора упора гребных колес. 
+              Кроме указанных параметров СКО ДК фиксирует и отображает на мониторе 
+              аварийные сигналы, поступающие с преобразователей частоты движительного 
+              комплекса:<br>
+              - короткое замыкание на выходе ПЧ;<br>
+              - короткое замыкание двигателя;<br>
+              - короткое замыкание на землю;<br>
+              - короткое замыкание модуля IGBT;<br>
+              - короткое замыкание нагрузки;<br>
+              - обрыв фазы двигателя;<br>
+              - обрыв трех фаз двигателя;<br>
+              - недонапряжение на входе преобразователя;<br>
+              - перегрев преобразователя;<br>
+              - срабатывание тепловой защиты из-за длительной перегрузки;<br>
+              - перегрузка ПЧ;<br>
+              -отсутствие связи с отдельными сегментами системы.<br>
+              Сообщения об авариях выводятся на монитор в мигающем красном окне.<br>
+              Вид информационного окна СКО ДК представлен на рисунке.<br>
+              СКО ДК была смонтирована на теплоходе «Сура» и введена в опытную 
+              эксплуатацию в навигацию 2011 года<br>
+              </font><font size="1" face="Verdana, Arial, Helvetica, sans-serif"></font></p></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td colspan="2" height="146" rowspan="2">&nbsp;</td>
+    <td height="176" rowspan="3" valign="bottom" align="right" width="408"> 
+      <table width="230" border="0" cellspacing="0" cellpadding="0" height="114">
+        <tr> 
+          <td width="175" height="89" align="right" valign="bottom"><img src="mezo.jpg" tppabs="http://vgavt-radio.ru/mezo.jpg" width="172" height="89"></td>
+          <td rowspan="2" align="right" width="55"><a href="index.php.htm" tppabs="http://vgavt-radio.ru/index.php" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image11','','main2.jpg'/*tpa=http://vgavt-radio.ru/main2.jpg*/,1)"><img name="Image11" border="0" src="main.jpg" tppabs="http://vgavt-radio.ru/main.jpg" width="58" height="152"></a></td>
+        </tr>
+        <tr> 
+          <td width="175" align="right" valign="bottom"><img src="kre.jpg" tppabs="http://vgavt-radio.ru/kre.jpg" width="172" height="63"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td background="newfl.jpg" tppabs="http://vgavt-radio.ru/newfl.jpg" height="87" align="center" width="198"> 
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+  <tr> 
+    <td colspan="3" height="40" align="left"><img src="razrbottom.jpg" tppabs="http://vgavt-radio.ru/razrbottom.jpg" width="510" height="86"></td>
+  </tr>
+</table>
